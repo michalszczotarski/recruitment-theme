@@ -28,6 +28,20 @@ function my_acf_op_init() {
     }
 }
 
+function wpdocs_add_new_block_category( $block_categories ) {
+	return array_merge(
+		$block_categories,
+		[
+			[
+				'slug'  => 'blueowl-category',
+				'title' => esc_html__( 'Blue owl', 'text-domain' ),
+				'icon'  => 'dashicons-cover-image', // Slug of a WordPress Dashicon or custom SVG
+			],
+		]
+	);
+}
+add_filter( 'block_categories_all', 'wpdocs_add_new_block_category' );
+
 function show($data) {
     echo "<pre>";
     print_r($data);
@@ -41,6 +55,19 @@ function get_menu_id($location) {
     $menu_id = $locations[$location];
 
     return !empty($menu_id) ? $menu_id : '';
+}
+
+function get_attachemnt_id($attachment_id , $classes = '') {
+    $scrset = wp_get_attachment_image_srcset($attachment_id, 'full');
+    $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt');
+    $alt = count($alt) ? $alt[0] : 'image';
+
+    return wp_get_attachment_image($attachment_id, 'full', false, [
+        'loading' => 'lazy',
+        'class' => $classes,
+        'scrset' => $scrset,
+        'alt' => $alt
+    ]);
 }
 
 function get_child_menu_items($menu_array, $parent_id) {

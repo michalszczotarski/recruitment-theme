@@ -1,6 +1,7 @@
 // Core files
 @import "core/normalize";
 @import "core/reset";
+@import "libs/splidejs";
 
 @import "utilities/variables";
 @import "utilities/mixins";
@@ -9,16 +10,7 @@
 @import 'partials/nav';
 @import 'partials/footer';
 
-
-// Your code here
-
-
-
-.pageWrapper {
-    padding: 100px;
-}
-
-
+@import 'partials/blocks/hero';
 
 body.admin-bar { 
     #wpadminbar {

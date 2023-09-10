@@ -17,7 +17,6 @@ input[type="submit"] {
   border: 1px solid $blue50;
   border-radius: 20px;
   padding: 8px 24px;
-  min-height: 40px;
   @include transition;
 
   &:hover,
@@ -28,6 +27,8 @@ input[type="submit"] {
 }
 
 .button {
+  min-height: 40px;
+
   &--secondary {
     border: 1px solid $white;
     background: transparent;
