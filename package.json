@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "@splidejs/splide": "^2.4.21",
+    "@splidejs/splide": "^4.1.4",
     "core-js": "^3.0.1",
     "normalize.css": "^8.0.1",
     "postcode-validator": "^3.7.0"

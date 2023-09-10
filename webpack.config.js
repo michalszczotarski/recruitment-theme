@@ -8,9 +8,9 @@ const config = {
   //Your path to dist accessed from a browser
   distPath: "/wp-content/themes/recruitment-theme/dist/",
   //Your local development url for browsersync
-  localUrl: "http://localhost:8080",
+  localUrl: "http://blueowl.test",
   //Open new window each time 'npm run serve' command is executed 
-  openWindow: false,
+  openWindow: true,
 }
 
 module.exports = {

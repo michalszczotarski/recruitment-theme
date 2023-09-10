@@ -2,4 +2,33 @@
 @import "core/normalize";
 @import "core/reset";
 
+@import "utilities/variables";
+@import "utilities/mixins";
+
+@import 'partials/typography';
+@import 'partials/nav';
+@import 'partials/footer';
+
+
 // Your code here
+
+
+
+.pageWrapper {
+    padding: 100px;
+}
+
+
+
+body.admin-bar { 
+    #wpadminbar {
+        position: fixed;
+        top: 0;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: $container;
+    margin: 0 auto;
+}
