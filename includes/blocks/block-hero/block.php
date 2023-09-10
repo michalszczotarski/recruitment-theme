@@ -7,7 +7,6 @@
 $tiles = get_field('tiles_hero');
 ?>
 
-
 <section class="splide splide-tiles" aria-label="Splide Basic HTML Example">
     <div class="splide__track">
         <ul class="splide__list">

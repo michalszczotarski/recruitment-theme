@@ -40,6 +40,18 @@ input[type="submit"] {
       color: $blue50;
     }
   }
+
+  &--white {
+    background: $white;
+    color: $blue50;
+
+    &:hover,
+    &:focus {
+      background: darken($white, 20%);
+      border: 1px solid darken($white, 20%);
+      
+    }
+  }
 }
 
 a.button {
