@@ -6,6 +6,8 @@
     font-family: $font-family2;
     font-size: 32px;
     margin-bottom: 24px;
+    font-weight: 400;
+    color: $black90;
   }
 
   &__box {
@@ -27,17 +29,25 @@
   }
 
   &__slider {
-    padding: 64px 64px 148px 64px;
+    padding: 48px 32px 72px 32px;
     order: 1;
     background: $white;
 
     @include breakpoint(medium) {
+      padding: 64px 64px 148px 64px;
       order: 0;
     }
 
     .splide {
+      &__slide {
+        padding: 0 2px;
+      }
       &__pagination {
-        bottom: -75px;
+        bottom: -40px;
+
+        @include breakpoint(medium) {
+          bottom: -75px;
+        }
 
         &__page {
           border: 1px solid $gray20;

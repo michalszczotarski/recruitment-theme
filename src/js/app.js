@@ -3,10 +3,7 @@ import Splide from '@splidejs/splide';
 
 const menuToggle = document.querySelector('#toggle-menu');
 const menu = document.querySelector('#main-nav-wrap');
-
-menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-});
+let isTablet = false;
 
 var splide = new Splide( '.splide-tiles', {
     autoplay: true
@@ -17,12 +14,8 @@ var testimonial = new Splide( '.splide-testimonial', {
 } );
 testimonial.mount();
 
-
-let isTablet = false;
-
-// Funkcja do obsługi zmiany szerokości ekranu
+handleScreenWidthChange();
 function handleScreenWidthChange() {
-
     if (!isTablet && window.matchMedia('screen and (max-width: 999px)').matches) {
         isTablet = true;
         splide.mount();
@@ -30,11 +23,11 @@ function handleScreenWidthChange() {
         isTablet = false;
         splide.destroy();
     }
-
 }
 
-// Wywołujemy funkcję po załadowaniu strony
-handleScreenWidthChange();
-
-// Dodajemy obsługę zdarzenia resize (zmiany rozmiaru okna)
 window.addEventListener('resize', handleScreenWidthChange);
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    document.body.classList.toggle('active-menu');
+});

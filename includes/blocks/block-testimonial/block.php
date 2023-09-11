@@ -50,12 +50,12 @@ $testimonials = get_field('testimonials_testimonial');
 
                 <div class="cta__buttons">
                     <a href="http://localhost:3000/#link1">
-                        <button class="button button--secondary">
+                        <button aria-label="Secondary button" type="button" class="button button--secondary">
                             Secondary button </button>
                     </a>
 
                     <a href="http://localhost:3000/#link2">
-                        <button class="button button--white">
+                        <button aria-label="Primary button" type="button" class="button button--white">
                             Primary button </button>
                     </a>
                 </div>

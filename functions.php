@@ -5,6 +5,7 @@ if(class_exists('acf_pro')){
 }
 
 add_theme_support( 'menus' );
+add_theme_support( 'title-tag' );
 
 register_nav_menus( array(
     'header_menu' => __( 'Header Menu' ),
@@ -57,12 +58,17 @@ function get_menu_id($location) {
     return !empty($menu_id) ? $menu_id : '';
 }
 
-function get_attachemnt_id($attachment_id , $classes = '') {
+function get_attachment_id($attachment_id, $size = 'full', $classes = '') {
     $scrset = wp_get_attachment_image_srcset($attachment_id, 'full');
     $alt = get_post_meta($attachment_id, '_wp_attachment_image_alt');
-    $alt = count($alt) ? $alt[0] : 'image';
 
-    return wp_get_attachment_image($attachment_id, 'full', false, [
+    if($alt && is_array($alt)) {
+        $alt = count($alt) ? $alt[0] : 'image';
+    } else {
+        $alt = 'image';
+    }
+
+    return wp_get_attachment_image($attachment_id, $size, false, [
         'loading' => 'lazy',
         'class' => $classes,
         'scrset' => $scrset,

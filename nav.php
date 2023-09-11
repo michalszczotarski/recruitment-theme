@@ -3,12 +3,6 @@ $header_menu_id = get_menu_id('header_menu');
 $header_menu = wp_get_nav_menu_items($header_menu_id);
 
 $logo_attachment_id = get_field('logo_header', 'option');
-$srcset = wp_get_attachment_image_srcset($logo_attachment_id, 'full');
-
-$logo = wp_get_attachment_image($logo_attachment_id, 'full', false, [
-    'loading' => 'lazy',
-    'scrset' => $srcset
-]);
 
 $button_header = get_field('button_header', 'option');
 
@@ -17,8 +11,8 @@ $button_header = get_field('button_header', 'option');
 <header class="header">
     <div class="main-nav">
         <div class="main-nav__left-box">
-            <a href="/" class="main-nav__logo">
-                <?php echo $logo; ?>
+            <a href="/">
+                <?php echo get_attachment_id($logo_attachment_id, null, 'main-nav__logo'); ?>
             </a>
 
             <svg id="toggle-menu" class="main-nav__toggle" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +59,7 @@ $button_header = get_field('button_header', 'option');
 
             <div class="main-nav__button_and_search">
                 <a href="<?php echo esc_url($button_header['url']); ?>">
-                    <button>
+                    <button aria-label="<?php esc_html_e($button_header['name']); ?>" type="button">
                         <?php esc_html_e($button_header['name']); ?>
                     </button>
                 </a>

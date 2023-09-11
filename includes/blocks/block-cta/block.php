@@ -24,13 +24,13 @@ $background_color = $background_color !== '' && !$background_color ? $background
 
         <div class="cta__buttons">
             <a href="<?php echo esc_url($secondary_button['link']); ?>">
-                <button class="button button--secondary">
+                <button aria-label="<?php esc_html_e($secondary_button['name']); ?>" type="button" class="button button--secondary">
                     <?php esc_html_e($secondary_button['name']); ?>
                 </button>
             </a>
 
             <a href="<?php echo esc_url($primary_button['link']); ?>">
-                <button class="button button--white">
+                <button aria-label="<?php esc_html_e($primary_button['name']); ?>" type="button" class="button button--white">
                     <?php esc_html_e($primary_button['name']); ?>
                 </button>
             </a>

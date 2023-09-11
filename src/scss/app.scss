@@ -14,10 +14,17 @@
 @import 'partials/blocks/cta';
 @import 'partials/blocks/testimonial';
 
-body.admin-bar { 
-    #wpadminbar {
-        position: fixed;
-        top: 0;
+
+body {
+    &.admin-bar {
+        #wpadminbar {
+            position: fixed;
+            top: 0;
+        }
+    }
+    
+    &.active-menu {
+        overflow-y: hidden;
     }
 }
 

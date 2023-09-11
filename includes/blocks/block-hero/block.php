@@ -13,7 +13,7 @@ $tiles = get_field('tiles_hero');
             <?php foreach ($tiles as $item) : ?>
                 <li class="splide__slide">
                     <a class="splide-tiles__tile" href="<?php echo esc_url($item['link']); ?>">
-                        <?php echo get_attachemnt_id($item['img'], 'splide-tiles__img') ?>
+                        <?php echo get_attachment_id($item['img'], null, 'splide-tiles__img') ?>
 
                         <h2 class="splide-tiles__name">
                             <?php esc_html_e($item['name']); ?>
@@ -28,7 +28,7 @@ $tiles = get_field('tiles_hero');
 <section class="hero">
     <?php foreach ($tiles as $item) : ?>
         <a class="hero__tile" href="<?php echo esc_url($item['link']); ?>">
-            <?php echo get_attachemnt_id($item['img'], 'hero__img') ?>
+            <?php echo get_attachment_id($item['img'], null, 'hero__img') ?>
 
             <h2 class="hero__name">
                 <?php esc_html_e($item['name']); ?>

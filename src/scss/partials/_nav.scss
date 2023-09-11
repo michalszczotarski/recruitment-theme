@@ -37,6 +37,12 @@
     }
   }
 
+  &__logo {
+    display: inline-block;
+    max-width: 126px;
+    height: auto;
+  }
+
   &__toggle {
     background: transparent;
     border: none;
@@ -79,6 +85,7 @@
       overflow-x: hidden;
       overflow-y: auto;
       max-height: calc(100vh - 92px);
+      height: 100vh;
       padding: 0 20px 20px 20px;
 
       @include breakpoint(medium) {
@@ -103,7 +110,7 @@
     display: block;
     text-decoration: none;
     padding: 10px 0;
-    color: $black70;
+    color: $black90;
 
     @include breakpoint(medium) {
       padding: 10px;
@@ -175,7 +182,7 @@
 
   &__submenu-link {
     padding: 10px 0;
-    color: $black70;
+    color: $black90;
     @include transition;
 
     @include breakpoint(medium) {
