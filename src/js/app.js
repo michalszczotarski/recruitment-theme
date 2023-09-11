@@ -11,6 +11,12 @@ menuToggle.addEventListener('click', () => {
 var splide = new Splide( '.splide-tiles', {
     autoplay: true
 } );
+var testimonial = new Splide( '.splide-testimonial', {
+    autoplay: true,
+    arrows: false
+} );
+testimonial.mount();
+
 
 let isTablet = false;
 

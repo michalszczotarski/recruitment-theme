@@ -65,6 +65,7 @@
     transition: max-height 0.2s ease-out;
     overflow: hidden;
     gap: 12px;
+    padding: 0 20px;
 
     @include breakpoint(medium) {
       align-items: center;

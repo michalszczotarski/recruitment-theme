@@ -1,1 +1,9 @@
 @import '~@splidejs/splide/dist/css/splide.min.css';
+
+.splide {
+    &__arrow {
+        &:hover, &:focus {
+            background: #ccc;
+        }
+    }
+}

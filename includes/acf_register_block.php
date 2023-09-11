@@ -5,6 +5,6 @@ function acf_blocks_init() {
         require get_template_directory() .'/includes/blocks/block-standard-text/register_block.php';
         require get_template_directory() .'/includes/blocks/block-hero/register_block.php';
         require get_template_directory() .'/includes/blocks/block-cta/register_block.php';
-
+        require get_template_directory() .'/includes/blocks/block-testimonial/register_block.php';
     }
 }
