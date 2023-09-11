@@ -1,0 +1,29 @@
+$breakpoints: (
+  small: 768px,
+  medium: 1000px,
+  large: 1500px,
+);
+
+$breakpointsMax: (
+  xsmall: 767px,
+  small: 999px,
+  medium: 1499px,
+);
+
+$font-family1: 'Jost', sans-serif;
+$font-family2: 'Neo Sans Pro', sans-serif;
+
+$container: 1224px;
+
+
+$blue50: #0860C4;
+
+$white: #FFFFFF;
+
+$gray5: #FCFCFC;
+$gray10: #F3F3F3;
+$gray20: #BABFC4;
+
+$black40: #717A84;
+$black70: #3B3F45;
+$black90: #232629;

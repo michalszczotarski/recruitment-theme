@@ -1,0 +1,253 @@
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid $gray10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 36px;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+    height: 92px;
+  }
+
+  &__left-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 92px;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      height: auto;
+      width: auto;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    max-width: 126px;
+    height: auto;
+  }
+
+  &__toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+
+    &-bar {
+      display: block;
+      width: 30px;
+      height: 4px;
+      background-color: $white;
+      margin: 6px 0;
+    }
+  }
+
+  &__right-box {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% + 40px);
+    position: relative;
+    left: 0;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    overflow: hidden;
+    gap: 12px;
+    padding: 0 20px;
+
+    @include breakpoint(medium) {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      max-height: none;
+      overflow: visible;
+    }
+
+    &.active {
+      overflow-x: hidden;
+      overflow-y: auto;
+      max-height: calc(100vh - 92px);
+      height: 100vh;
+      padding: 0 20px 20px 20px;
+
+      @include breakpoint(medium) {
+        overflow: auto;
+        max-height: unset;
+      }
+    }
+  }
+
+  &__menu {
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(medium) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__menu-link {
+    display: block;
+    text-decoration: none;
+    padding: 10px 0;
+    color: $black90;
+
+    @include breakpoint(medium) {
+      padding: 10px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $black40;
+    }
+
+    &--arrow {
+      @include breakpoint(medium) {
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
+      }
+
+      &:hover,
+      &:focus {
+        .main-nav__menu-link-arrow-path {
+          fill: $black40;
+        }
+      }
+    }
+  }
+
+  &__menu-link-arrow {
+    display: none;
+
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
+  }
+
+  &__submenu {
+    @include breakpoint(medium) {
+      position: relative;
+    }
+
+    &:hover {
+      .main-nav__submenu-wrap {
+        @include breakpoint(medium) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__submenu-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0 10px;
+    @include transition;
+
+    @include breakpoint(medium) {
+      position: absolute;
+      left: 0;
+      top: 50px;
+      padding: 10px;
+      opacity: 0;
+      visibility: hidden;
+      background: $white;
+      border: 1px solid $gray10;
+      width: 150px;
+    }
+  }
+
+  &__submenu-link {
+    padding: 10px 0;
+    color: $black90;
+    @include transition;
+
+    @include breakpoint(medium) {
+      padding: 10px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $black40;
+    }
+  }
+
+  &__button_and_search {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include breakpoint(medium) {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  &__search {
+    display: flex;
+  }
+
+  &__input-search {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid $gray10;
+    padding: 10px 24px;
+
+    &::placeholder {
+      color: $black40;
+    }
+  }
+
+  &__submit-search.button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px 10px 12px;
+  }
+}
+
+body.admin-bar {
+  header {
+    top: 46px;
+
+    @media (min-width: 783px) {
+      top: 32px;
+    }
+  }
+  
+  .main-nav {
+    &__right-box {
+      &.active {
+        max-height: calc(100vh - 92px - 46px);
+
+        @include breakpoint(783px) {
+          max-height: calc(100vh - 92px - 32px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.testimonial {
+  background: $gray5;
+  padding: 64px 20px;
+
+  &__heading {
+    font-family: $font-family2;
+    font-size: 32px;
+    margin-bottom: 24px;
+    font-weight: 400;
+    color: $black90;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr;
+    max-width: 100%;
+    border: 1px solid $gray10;
+
+    @include breakpoint(medium) {
+      grid-template-columns: minmax(0, 550px) minmax(0, 1fr);
+      grid-template-rows: 1fr;
+    }
+
+    @include breakpoint(large) {
+      grid-template-columns: minmax(0, 797px) minmax(0, 1fr);
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__slider {
+    padding: 48px 32px 72px 32px;
+    order: 1;
+    background: $white;
+
+    @include breakpoint(medium) {
+      padding: 64px 64px 148px 64px;
+      order: 0;
+    }
+
+    .splide {
+      &__slide {
+        padding: 0 2px;
+      }
+      &__pagination {
+        bottom: -40px;
+
+        @include breakpoint(medium) {
+          bottom: -75px;
+        }
+
+        &__page {
+          border: 1px solid $gray20;
+          background: unset;
+        
+          &.is-active {
+            transform: none;
+            background: $blue50;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__desc-slide {
+    color: $black90;
+    font-weight: 500;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__author-slide {
+    color: $blue50;
+    font-weight: 600;
+  }
+
+
+
+  &__cta {
+    background: $blue50;
+  }
+}

@@ -1,0 +1,72 @@
+body {
+  overflow-x: hidden;
+  padding-top: 92px;
+  font-family: $font-family1;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: $black70;
+}
+
+button,
+.button,
+a.button,
+input[type="button"],
+input[type="submit"] {
+  background: $blue50;
+  color: white;
+  border: 1px solid $blue50;
+  border-radius: 20px;
+  padding: 8px 24px;
+  @include transition;
+
+  &:hover,
+  &:focus {
+    border-color: darken($blue50, 20%);
+    background: darken($blue50, 20%);
+  }
+}
+
+.button {
+  min-height: 40px;
+
+  &--secondary {
+    border: 1px solid $white;
+    background: transparent;
+
+    &:hover,
+    &:focus {
+      background: $white;
+      border: 1px solid $white;
+      color: $blue50;
+    }
+  }
+
+  &--white {
+    background: $white;
+    color: $blue50;
+
+    &:hover,
+    &:focus {
+      background: darken($white, 20%);
+      border: 1px solid darken($white, 20%);
+      
+    }
+  }
+}
+
+a.button {
+  text-decoration: none;
+}
+
+a {
+  color: $blue50;
+  @include transition;
+
+  &:hover, &:focus {
+    color: darken($blue50, 20%);
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 500;
+}
